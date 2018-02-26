@@ -24,6 +24,7 @@ public class ColorExchange extends JFrame implements ActionListener {
 	JPanel coordPane;
 	JButton randoButton;
 	JLabel coordLabel;
+	Font font = new Font("Dialog", Font.BOLD, 24);
 	int count = 0;
 	
 	public ColorExchange(int length) {
@@ -38,8 +39,6 @@ public class ColorExchange extends JFrame implements ActionListener {
 	}
 	
 	public void openWindow() {
-		
-		Font font = new Font("Dialog", Font.BOLD, 98);
 
 		west = new JPanel();
 		west.setBackground(Color.GREEN);
@@ -103,7 +102,6 @@ public class ColorExchange extends JFrame implements ActionListener {
 		button.addActionListener(this);
 		randoButton.addActionListener(this);
 		
-		
 	}
 	
 	public void actionPerformed(ActionEvent event) {
@@ -117,7 +115,11 @@ public class ColorExchange extends JFrame implements ActionListener {
 			text.setText(Integer.toString(count));
 		}
 		else if ("Random color".equals(event.getActionCommand())){
-			//System.out.println("Test");
+			int R = randomInt(0, 255), G = randomInt(0, 255), B = randomInt(0, 255);
+			Color randomColor = new Color(R,G,B);
+			coordPane.setBackground(randomColor);
+			coordLabel.setText("RGB coordinates: R: " + R + " G: " + G + " B: " + B);
+			//coordLabel.setFont(font);
 		}
 		else {
 			JOptionPane.showMessageDialog(null, "How did you even do this");
@@ -128,7 +130,6 @@ public class ColorExchange extends JFrame implements ActionListener {
 	public static int randomInt(int min, int max) {
 		Random random = new Random();
 		int randomReturn = random.nextInt((max - min) + 1) + min;
-		System.out.println(randomReturn);
 		return randomReturn;
 	}
 	

@@ -12,8 +12,6 @@ public class Test {
 	public static void main(String[] args) {
 		ColorExchange gui = new ColorExchange(10);
 		gui.openWindow();
-		
-		
 	}
 
 }
