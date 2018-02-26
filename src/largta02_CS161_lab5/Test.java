@@ -10,8 +10,10 @@ public class Test {
 	 */
 	
 	public static void main(String[] args) {
-		BaseWindow gui = new BaseWindow(10);
+		ColorExchange gui = new ColorExchange(10);
 		gui.openWindow();
+		
+		
 	}
 
 }
