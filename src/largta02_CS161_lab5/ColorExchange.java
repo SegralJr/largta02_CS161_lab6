@@ -118,7 +118,7 @@ public class ColorExchange extends JFrame implements ActionListener {
 			int R = randomInt(0, 255), G = randomInt(0, 255), B = randomInt(0, 255);
 			Color randomColor = new Color(R,G,B);
 			coordPane.setBackground(randomColor);
-			coordLabel.setText("RGB coordinates: R: " + R + " G: " + G + " B: " + B);
+			coordLabel.setText("RGB coordinates: R: " + R + " G: " + G + " B: " + B);\
 			//coordLabel.setFont(font);
 		}
 		else {
